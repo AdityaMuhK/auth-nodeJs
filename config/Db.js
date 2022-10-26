@@ -6,7 +6,7 @@ const koneksi = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
-  database: "auth_db",
+  database: "investasi",
   multipleStatements: true,
 });
 //koneksi database

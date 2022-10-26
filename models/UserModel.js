@@ -1,31 +1,59 @@
-import { Sequelize } from "sequelize"; 
-import db from "../config/Database.js"; 
- 
-const { DataTypes } = Sequelize; 
- 
-const Users = db.define( 
-  "users", 
+import { Sequelize } from "sequelize";  
+import db from "../config/Database.js";  
+  
+const { DataTypes } = Sequelize;  
+  
+const Users = db.define(  
+  "user",  
   { 
-    name: { 
-      type: DataTypes.STRING, 
+    id: { 
+      type: DataTypes.INTEGER, 
+      primaryKey: true 
+    },
+    name: {  
+      type: DataTypes.TEXT,  
+    },  
+    email: {  
+      type: DataTypes.TEXT,  
+    },  
+    password: {  
+      type: DataTypes.TEXT,  
+    },  
+    contact: { 
+      type: DataTypes.INTEGER,  
     }, 
-    email: { 
-      type: DataTypes.STRING, 
+    uid: { 
+      type: DataTypes.INTEGER,  
     }, 
-    password: { 
-      type: DataTypes.STRING, 
+    date: { 
+      type: DataTypes.DATE,  
     }, 
-    refresh_token: { 
-      type: DataTypes.TEXT, 
+    profile_pic: { 
+      type: DataTypes.TEXT,  
     }, 
-  }, 
-  { 
-    freezeTableName: true, 
-  } 
-); 
- 
-(async () => { 
-  await db.sync(); 
-})(); 
- 
+    aadhar: { 
+      type: DataTypes.TEXT,  
+    }, 
+    bankname: { 
+      type: DataTypes.TEXT,  
+    }, 
+    bankifsc: { 
+      type: DataTypes.TEXT,  
+    }, 
+    bank: { 
+      type: DataTypes.TEXT,  
+    }, 
+    refresh_token: {  
+      type: DataTypes.TEXT,  
+    },  
+  },  
+  {  
+    freezeTableName: true,  
+  }  
+);  
+  
+(async () => {  
+  await db.sync();  
+})();  
+  
 export default Users;
