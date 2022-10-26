@@ -1,5 +1,4 @@
 import db from "../models/WalletModel.js";  
-const Wallet = db.wallet;  
   
 // add wallet  
 export const addWallet = async (req, res) => {  
