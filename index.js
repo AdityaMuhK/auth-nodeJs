@@ -23,11 +23,11 @@ app.use(express.json());
 app.use(router);
 
 //lokasi router
-import borrow from "./routes/Borrow.js";
+import borrow from "./routes/BorrowModel.js";
 app.use("/api/borrow", borrow);
-import invest from "./routes/Invest.js";
+import invest from "./routes/InvestModel.js";
 app.use("/api/invest", invest);
-import wallet from "./routes/Wallet.js";
+import wallet from "./routes/WalletModel.js";
 app.use("/api/wallet", wallet);
 import user from "./routes/Users.js";
 app.use("/api/user", user);
