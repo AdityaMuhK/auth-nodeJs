@@ -6,10 +6,6 @@ const { DataTypes } = Sequelize;
 const Borrow = db.define(  
   "borrow",  
   { 
-    id: { 
-        type: DataTypes.INTEGER, 
-        primaryKey: true 
-      },
     title: {  
       type: DataTypes.TEXT,  
     },  

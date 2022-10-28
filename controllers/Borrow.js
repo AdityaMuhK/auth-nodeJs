@@ -20,13 +20,13 @@ export const addBorrows = async (req, res) => {
     collect: req.body.collect,
   };
 
-  const borrows = await Borrows.create(data);
+  const borrows = await Borrow.create(data);
   res.status(200).send(borrows);
 };
 
 // get all borrows
 export const getAllBorrows = async (req, res) => {
-  const borrows = await Borrows.findAll()
+  const borrows = await Borrow.findAll()
   res.status(200).send(borrows);
 };
 
@@ -41,7 +41,7 @@ export const getOneBorrows = async (req, res) => {
   export const updateBorrows = async (req, res) => {
     let id = req.params.id;
   
-    const borrows = await Borrows.update(req.body, { where: { id: id } });
+    const borrows = await Borrow.update(req.body, { where: { id: id } });
     if (borrows.affectedRows === 1) {
       return res.json({ success: true });
     }
@@ -53,7 +53,7 @@ export const getOneBorrows = async (req, res) => {
   export const deleteBorrows = async (req, res) => {
   let id = req.params.id;
 
-  await Borrows.destroy({ where: { id: id } });
+  await Borrow.destroy({ where: { id: id } });
 
   res.status(200).send("Borrows is deleted !");
 };
